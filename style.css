@@ -6,17 +6,12 @@
     text-decoration: none;  
 }
 
-h1, h2, h5 {
+h1, h2, h3, h5 {
     font-weight: 700;
 }
 
 body {
     background-color: white;
-}
-
-nav {
-    width: 100%;
-    background-color: #011827;
 }
 
 header {
@@ -25,6 +20,7 @@ header {
     align-items: flex-start;
     width: 100%;
     padding: 10px;
+    background-color: #011827;
 }
 
 .logo__container {
@@ -41,7 +37,8 @@ header {
     color: white;
     display: flex;
     font-size: 2.2rem;
- }
+ 
+}
 
 .logo__container h1 span {
     margin-right: 10px;
@@ -49,6 +46,8 @@ header {
 
 .menu__container {
     width: 100%;
+    height: auto;
+    padding: 1rem 5%;
  }
 
 .menu ul {
@@ -71,16 +70,51 @@ header {
 .menu a:hover {
     color: lightblue;
  }
+
+ @media screen and (max-width: 950px){
+    header .logo__container {
+        width: 100%;
+    }
+
+    header .logo__container .logo {
+        transform: translateY(0.2rem);
+    }
+
+    header .logo__container h1 {
+        display: inline-block;
+        height: auto;
+        text-align: left;
+        font-size: 24px;
+        line-height: 1.5rem;
+        transform: translateY(0.1rem);
+        padding-top: 15px;
+        padding-bottom: 5px;
+    }
+
+    header .logo__container h1 span {
+        display: block;
+    }
+
+    header .menu__container {
+        display: none;
+    }
+ }
  
-.buttons {
-    position: absolute;
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    height: auto;
-    top: 100%;
-    right: 50%;
-    transform: translate(50%, -50%);
+ @media screen and (max-width: 480px) {
+    header .logo__container {
+        max-width: 100%;
+    }
+    header .logo__container .logo {
+        transform: translateY(0.1rem);
+        width: 6rem;
+        height: 4rem;
+    }
+
+    header .logo__container h1 {
+        font-size: 20px;
+        line-height: 1.25rem;
+        padding-top: 10px;
+    }
 }
 
 .background__pic {
@@ -115,8 +149,60 @@ header {
     cursor: pointer;
  }
 
+ .background__pic .buttons {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: auto;
+    top: 100%;
+    right: 50%;
+    transform: translate(50%, -50%);
+}
+
+@media screen and (max-width: 950px) {
+    .background__pic .buttons {
+        flex-direction: column-reverse;
+        bottom: -90%;
+        padding: 0 5%;
+        justify-content: unset;
+        align-items: center;
+    }
+
+    .background__pic .buttons .btn__One {
+        background-color: transparent;
+        color: #36769D;
+        text-decoration: underline;
+        font-size: 1.2rem;
+        margin-top: 2rem;
+        margin-right: 0;
+    }
+
+    .background__pic .buttons .btn__Two {
+        font-size: 1.2rem;
+        
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .background__pic {
+        height: 15rem;
+    }
+
+    .background__pic .buttons {
+        bottom: -140%;
+    }
+    .background__pic .buttons .btn__One {
+        font-size: 16px;
+    }
+    
+    .background__pic .buttons .btn__Two {
+        font-size: 20px;
+    }
+}
+
  .reviews {
-    grid-column: span 12;
+    width: 100%;
     height: auto;
     margin: 150px 0;
     padding: 0 5%;
@@ -126,7 +212,7 @@ header {
  .reviews .user__content {
     display: flex;
     justify-content: space-between; 
-    max-width: 1400px;
+    max-width: 1200px;
     margin: 0 auto;
  }
 
@@ -154,4 +240,454 @@ header {
     font-style: italic;
     font-size: 1.5rem;
     margin-bottom: 0.7rem;
+}
+
+@media screen and (max-width: 950px) {
+    .reviews {
+        margin: 15rem 0 8rem 0;
+    }
+
+    .reviews .user__content {
+        width: 100%;
+        padding: 0 1rem;
+        overflow-x: scroll;
+        overflow-y: hidden;
+    }
+    
+    .reviews .review {
+        min-width: 100%;
+        margin-left: 1rem;
+    }
+
+    .reviews .review__one {
+        margin-left: 0;
+    }
+
+    .reviews .review .description .new__row {
+        display: none;     
+    }
+}
+
+.popular__challenges {
+    width: 100%;
+    height: auto;
+    padding: 0 5%;
+    margin: 5rem 0;
+}
+
+.popular__challenges .box__challenges {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.popular__challenges .box__challenges .main__title {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 400;
+    margin: 4.5rem;
+}
+
+.popular__challenges .boxes {
+    display: flex;
+    justify-content: space-between;
+}
+
+.popular__challenges .boxes .box {
+    width: 28%;
+    height: auto;
+    border-radius: 6px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+    background-color: white;
+}
+
+.popular__challenges .boxes .box .box__pic {
+    width: 100%;
+    height: 15rem;
+}
+
+.popular__challenges .boxes .box .box__content {
+    padding: 1rem;
+}
+
+.popular__challenges .boxes .box .box__content .title {
+    font-weight: 400;
+    font-size: 28px;
+}
+
+.popular__challenges .boxes .box .box__content .five__stars {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0.1rem 0 1rem 0;
+}
+
+.popular__challenges .boxes .box .box__content .five__stars .stars {
+    display: flex;
+}
+
+.popular__challenges .star {
+    background-image: url(Star1.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 1rem;
+    height: 1rem;
+    margin-right: 0.1rem;
+}
+
+.popular__challenges .empty__star {
+    background-image: url(empty_star.png);
+}
+
+.popular__challenges .boxes .box .box__content .five__stars p {
+    font-size: 15px;
+}
+
+.popular__challenges .boxes .box .box__content .box__text {
+    font-size: 18px;
+}
+
+.popular__challenges .boxes .box .box__content .box__button {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 1rem;
+}
+
+.popular__challenges .boxes .box .box__content .box__button > button {
+    background-color: #E3170A;
+    color: white;
+    font-weight: 700;
+    font-size: 15px;
+    border: none;
+    border-radius: 4px;
+    padding: 0.8rem 2rem;
+    cursor: pointer;
+}
+
+.popular__challenges .mid__buttons {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 6rem 0;
+}
+
+.popular__challenges > div .btn__One {
+    margin-right: 1rem;
+    background-color: #E3170A;
+    color: white;
+    font-weight: 700;
+    font-size: 23px;
+    border-radius: 5px;
+    padding: 1rem 3rem;
+    border: none;
+    cursor: pointer;
+}
+
+.popular__challenges > div .btn__Two {
+    background-color: #8ACFE5;
+    color: #011827;
+    font-size: 23px;
+    font-weight: 700;
+    border-radius: 5px;
+    padding: 1rem 3rem;
+    border: none;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 950px) {
+    .popular__challenges {
+        padding: 0;
+    }
+
+    .popular__challenges .boxes {
+        width: 100%;
+        justify-content: unset;
+        padding-left: 15%;
+        padding-bottom: 5px;
+        overflow-x: scroll;
+        overflow-y: hidden;
+    }
+
+    .popular__challenges .boxes .box {
+        min-width: 65%;
+        margin-right: 4rem;
+    }
+
+    .popular__challenges .mid__buttons {
+        flex-direction: column-reverse;
+        bottom: -90%;
+        padding: 0 5%;
+        justify-content: unset;
+        align-items: center;
+    }
+    .popular__challenges > div .btn__One {
+        background-color: transparent;
+        color: #36769D;
+        text-decoration: underline;
+        font-size: 1.2rem;
+        margin-top: 2rem;
+        margin-right: 0;
+    }
+
+    .popular__challenges > div .btn__Two{
+        font-size: 1.2rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .popular__challenges .box__challenges .main__title {
+        font-size: 25px;
+    }
+    
+    .popular__challenges .boxes .box .box__pic {
+        height: 12rem;
+    }
+}
+
+
+.info {
+    background-color: #011827;
+    width: 100%;
+    height: auto;
+    padding: 0 5%;
+}
+
+.info .mid__info {
+    max-width: 1200px;
+    margin: 0 auto;
+    height: 30rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.info p {
+    height: auto;
+    max-width: 45%;
+    text-align: center;
+    color: white;
+    font-size: 1.5rem;
+}
+
+.info button {
+    margin-top: 2.5rem;
+    font-weight: 700;
+    font-size: 24px;
+    border-radius: 5px;
+    background-color: #011827;
+    color: #8ACFE5;
+    border: 0.2rem solid #8ACFE5;
+    padding: 1rem 3rem;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 950px) {
+    .info p {
+        max-width: 100%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .info p {
+        font-size: 1.2rem;
+    }
+
+    .info button {
+        font-size: 20px;
+    }
+}
+
+.blocks {
+    width: 100%;
+    height: auto;
+    padding: 0 5%;
+    max-width: 1400px;
+}
+
+.blocks .block__mar {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.blocks .block__content {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.blocks .block__content .block__one {
+    order: 1;
+    background-image: url(block__1.png);
+    background-size: cover;
+    background-position: center;
+    width: 50%;
+    height: 30rem;
+}
+
+.blocks .block__content .block__two {
+    order: 2;
+    width: 50%;
+    height: 30rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 5rem;
+}
+
+.blocks .block__content .block__two h2 {
+    font-size: 2rem;
+}
+
+.blocks .block__content .block__two p {
+    font-size: 1.5rem;
+}
+
+.blocks .block__content .block__three {
+    order: 3;
+    width: 50%;
+    height: 30rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 5rem;
+}
+
+.blocks .block__content .block__three h2 {
+    font-size: 2rem;
+}
+
+.blocks .block__content .block__three p {
+    font-size: 1.5rem;
+}
+
+.blocks .block__content .block__four {
+    order: 4;
+    background-image: url(block__4.png);
+    background-size: cover;
+    background-position: center;
+    width: 50%;
+    height: 30rem;
+}
+
+.blocks .block__content button {
+    font-weight: 700;
+    font-size: 1.5rem;
+    background-color: #E3170A;
+    color: white;
+    border-radius: 5px;
+    padding: 0.8rem 1.5rem;
+    border: none;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 950px) {
+    .blocks .block__content {
+        flex-flow: unset;
+        flex-direction: column;
+    }
+
+    .blocks .block__content .block__one {
+        width: 100%;
+        height: 25rem;
+    }
+
+    .blocks .block__content .block__two {
+        width: 100%;
+        height: 25rem;
+        padding: 0 5%;
+    }
+
+    .blocks .block__content .block__three {
+        order: 4;
+        width: 100%;
+        height: 25rem;
+        padding: 0 5%;
+    }
+
+    .blocks .block__content .block__four {
+        order: 3;
+        width: 100%;
+        height: 25rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .blocks {
+        padding: 0;
+    }
+}
+
+footer {
+    width: 100%;
+    height: auto;
+    padding: 0 5%;
+    margin-top: 10rem;
+    background-color: #011827;
+}
+
+footer .foot__flex {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 13rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+footer .footer__text {
+    width: 40%;
+}
+
+footer h5, footer p, footer a {
+    display: block;
+    color: white;
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+}
+
+footer .links {
+    display: flex;
+}
+
+footer .links .site__map {
+    width: 10rem;
+}
+
+footer a {
+    margin-bottom: 0.2rem;
+}
+
+footer .links .social__media {
+    width: 10rem;
+}
+
+@media screen and (max-width: 950px) {
+    footer .foot__flex {
+        flex-direction: column;
+        width: 100%;
+        padding: 5rem 0;
+    }
+    
+    footer .footer__text {
+        width: inherit;
+        margin-bottom: 1.8rem;
+    }
+
+    footer .links {
+        flex-direction: column;
+        width: inherit;
+    }
+
+    footer .links .site__map {
+        margin-bottom: 2rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    footer h5, footer p, footer a {
+        font-size: 0.9rem;
+    }
 }
